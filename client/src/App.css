@@ -365,7 +365,7 @@ table th {
   opacity: 0.9;
   margin-bottom: 1rem;
   position: fixed;
-  top:0;
+  top: 0;
 }
 
 .navbar ul {
@@ -403,7 +403,7 @@ table th {
 }
 
 /* Mobile Styles */
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .hide-sm {
     display: none;
   }
@@ -431,6 +431,8 @@ table th {
   .navbar {
     display: block;
     text-align: center;
+    position: sticky;
+    margin-bottom: -60px;
   }
 
   .navbar h1 {

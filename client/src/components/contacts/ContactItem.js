@@ -6,11 +6,16 @@ import ContactContext from '../../context/contact/ContactContext'
 const ContactItem = ({ contact }) => {
   let contactContext = useContext(ContactContext)
   let {deleteContact, setCurrent, clearCurrent} = contactContext
-  let { name, email, phone, id, type } = contact;
+  let { name, email, phone, _id, type } = contact;
 
   const onDelete = ()=>{
-    deleteContact(id)
+    deleteContact(_id)
     clearCurrent()
+  }
+
+  const onClickEdit = () =>{
+    setCurrent(contact)
+    window.scrollTo(0,0)
   }
 
   return (
@@ -39,7 +44,7 @@ const ContactItem = ({ contact }) => {
         )}
       </ul>
       <p>
-        <button onClick={()=> setCurrent(contact)} className="btn btn-dark btn-sm">
+        <button onClick={onClickEdit} className="btn btn-dark btn-sm">
           Edit
         </button>
         <button onClick={onDelete} className="btn btn-danger btn-sm">
